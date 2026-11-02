@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple interactive study planner that uses conditional logic to create a personalized result."
+    />
+    <title>After Class Compass · Interactive Logic</title>
+    <link rel="stylesheet" href="style.css?v=20261102" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="#planner">CCT360 · Lab 4</a>
+      <p>Interactive Logic</p>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">A small decision-making tool</p>
+          <h1>After Class<br />Compass</h1>
+        </div>
+        <p class="hero-copy">
+          Not sure what to do next? Answer three quick questions and get a
+          study plan that matches your energy, time, and deadline.
+        </p>
+      </section>
+
+      <section id="planner" class="planner" aria-labelledby="planner-title">
+        <div class="planner-heading">
+          <p class="step-number">01</p>
+          <div>
+            <p class="eyebrow">Tell me about today</p>
+            <h2 id="planner-title">Choose your situation</h2>
+          </div>
+        </div>
+
+        <form id="plan-form">
+          <div class="field">
+            <label for="energy">Energy level</label>
+            <select id="energy" required>
+              <option value="">Select energy</option>
+              <option value="low">Low — I need a reset</option>
+              <option value="medium">Medium — I can do something small</option>
+              <option value="high">High — I am ready to focus</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="time">Available time</label>
+            <select id="time" required>
+              <option value="">Select time</option>
+              <option value="15">15 minutes</option>
+              <option value="30">30 minutes</option>
+              <option value="60">60 minutes or more</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="deadline">Next deadline</label>
+            <select id="deadline" required>
+              <option value="">Select deadline</option>
+              <option value="today">Today</option>
+              <option value="soon">In the next few days</option>
+              <option value="later">Next week or later</option>
+            </select>
+          </div>
+
+          <button type="submit">Build my plan <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
+
+      <section id="result" class="result result-empty" aria-live="polite">
+        <div class="result-heading">
+          <p class="step-number">02</p>
+          <div>
+            <p class="eyebrow">Your recommendation</p>
+            <h2 id="result-title">Your plan will appear here</h2>
+          </div>
+        </div>
+
+        <div class="result-content">
+          <div id="result-icon" class="result-icon" aria-hidden="true">?</div>
+          <div>
+            <p id="result-text">
+              Complete the three questions above and select “Build my plan.”
+            </p>
+            <ul id="result-steps" class="result-steps"></ul>
+          </div>
+        </div>
+
+        <div class="state-line">
+          <p id="previous-plan">No previous plan yet.</p>
+          <p id="plan-count">Plans created: 0</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>CCT360 Lab 4 · Interactive Logic</p>
+      <p>Made with variables, conditions, and JavaScript state.</p>
+    </footer>
+
+    <script src="script.js?v=20261102"></script>
+  </body>
+</html>
